@@ -13,3 +13,5 @@ ggplot(data=mHdFac, aes(x=weight))+
 ggplot(data=mHdFac, aes(x=weight, y=Strain))+
   geom_point()+
   facet_grid(~Plant, scales = "free_x")
+
+##try again tomorrow
