@@ -26,11 +26,14 @@ AdRank<-hostStrainSum %>%
 
 ord1<-AdRank$Strain
 
-hostSsOrd<-mHdFac %>% 
+hostSsOrd<-hostStrainSum %>% 
+  mutate(Strain = factor(Strain, levels = ord1))
+
+mHdFacOrd<-mHdFac %>% 
   mutate(Strain = factor(Strain, levels = ord1))
 
 hostSsOrd$Strain
 
-ggplot(data=hostSsOrd, aes(x=weight, y=Strain))+
+ggplot(data=hostSsOrd, aes(x=mnWt, y=Strain))+
   geom_point()+
   facet_grid(~Plant, scales = "free_x")
