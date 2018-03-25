@@ -42,6 +42,12 @@ ggplot(data=mHdFacOrd, aes(x=weight, y=Strain))+
   geom_point()+
   facet_grid(~Plant, scales = "free_x")
 
+#boxplot
+ggplot(data=mHdFacOrd, aes(x=Strain, y=weight))+
+  geom_boxplot()+
+  facet_grid(~Plant, scales = "free_x")+
+  coord_flip()
+
 #plot means
 ggplot(data=hostSsOrd, aes(x=Strain, y=mnWt))+
   geom_bar(stat="identity")+
